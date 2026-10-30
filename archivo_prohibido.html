@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>ITERACION</title>
+
+<style>
+
+body {
+    background:#000;
+    color:#ff2222;
+    font-family:monospace;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    height:100vh;
+
+    margin:0;
+
+    overflow:hidden;
+}
+
+h1 {
+    font-size:3em;
+    letter-spacing:0.3em;
+}
+
+p {
+    font-size:1.2em;
+    color:#aaaaaa;
+}
+
+#contador {
+    font-size:1em;
+    color:#555;
+    margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>ESTO NO DEBERÍA PASAR</h1>
+
+<p>¿Lo recuerdas?</p>
+
+<p id="contador">Cerrando en 5...</p>
+
+<script>
+
+let seg=5;
+
+const c=document.getElementById('contador');
+
+const t=setInterval(()=>{
+
+    seg--;
+
+    c.textContent='Cerrando en '+seg+'...';
+
+    if(seg<=0){
+
+        clearInterval(t);
+
+        window.close();
+
+    }
+
+},1000);
+
+</script>
+
+</body>
+
+</html>
